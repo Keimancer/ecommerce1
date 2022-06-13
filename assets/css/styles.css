@@ -124,7 +124,23 @@ nav > div.icons{
 
 div.icons > div.cont-icons > i{
     font-size: 25px;
-    font-size: 25px;color: var(--button-color);
+    color: var(--button-color);
+}
+
+div.cont-icons > span.cart-count{
+    width: 1rem;
+    height: 1rem;
+    font-size: 10px;
+    background-color: var(--button-color);
+    color: var(--container-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 50%;
+    padding: .5rem;
+    bottom: 15px;
+    right: 65px;
 }
 
 /* MAIN STATIC CONTENT */
@@ -218,6 +234,38 @@ div.main-buttons > div#main-add > h5{
     font-weight: 600;
 }
 
+section.store{
+    padding: 5rem 0;
+}
+
+div.category-title-father{
+    padding: 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem
+}
+
+div.category-title-father > div.category-title{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    align-items: center;
+    gap: .5rem;
+    border-right: 1px var(--text-color-light) solid;
+}
+
+div.category-title > h4{
+    color: var(--title-color);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+div.category-title > h5{
+    color: var(--title-color);
+    font-size: 14px;
+    font-weight: 400;
+}
+
 /* Footer */
 
 footer{
@@ -269,6 +317,100 @@ div#social-icons > a > i{
     color: var(--title-color);
 }
 
+/* Cart aside stuff */
+
+aside.shopping-cart{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: hsla(0, 0%, 17%, 0.308);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 30;
+}
+
+aside.shopping-cart.mostrar{
+    display: block;
+}
+
+div.product-list{
+    background-color: var(--body-color);
+    width: 100%;
+    max-width: 450px;
+    min-height: 100vh;
+    padding: 1.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.product-list > i.cart-close{
+    position: absolute;
+    right: 1.5rem;
+    color: var(--button-color);
+}
+
+div.product-list > h2{
+    padding-top: 3rem;
+    font-size: 18px;
+    color: var(--title-color);
+}
+
+div.empty-state{
+    min-height: 60vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--title-color);
+}
+
+div.empty-state > img{
+    max-width: 250px;
+}
+
+div.empty-state > h2{
+    font-size: 18px;
+}
+
+div.empty-state > h5{
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+}
+
+div.items-count-price{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--title-color);
+    font-size: 12px;
+    padding-bottom: 1rem;
+}
+
+div.items-count-price > h3{
+    font-weight: 400;
+}
+
+div.product-list > div#checkout-button{
+    background-color: var(--card-color);
+    padding: 10px 25px;
+    position: relative;
+    left: 25vw;
+}
+
+div#checkout-button > h4{
+    color: var(--title-color);
+    font-size: 14px;
+    font-weight: 400;
+}
 
 
 /* CSS Product boxes */
