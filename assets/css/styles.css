@@ -1,0 +1,281 @@
+/*GOOGLE FONT*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root{
+    --first-color: hsl(354, 78%, 60%);
+    --button-color: hsl(0, 0%, 17%);
+    --button-color-alt: hsl(0, 0%, 21%);
+    --card-color: hsl(0, 0%, 90%);
+    --title-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 55%);
+    --body-color: hsl(206, 4%, 97%);
+    --container-color: #fff;
+    --border-color: hsl(0, 0%, 94%);
+/*Dark mode colors*/
+    --first-color-dark: hsl(182, 53%, 74%);
+    --button-color-dark: hsl(246, 16%, 12%);
+    --button-color-alt-dark: hsl(0, 0%, 28%);
+    --card-color-dark: hsla(246, 16%, 5%, .5);
+    --title-color-dark: hsl(0, 0%, 95%);
+    --text-color-dark: hsl(0, 0%, 75%);
+    --body-color-dark: hsl(249, 19%, 14%);
+    --container-color-dark: hsl(246, 16%, 12%);
+    --border-color-dark: hsl(0, 0%, 20%);
+}
+
+/* General stuff */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--body-color);
+}
+
+/* Header stuff */
+
+nav{
+    position: fixed;
+    display: grid;
+    grid-template-columns: 150px 1fr 50px;
+    grid-template-areas: "a-store icons burger";
+    align-items: center;
+    padding: 0 1.25rem;
+    height: 60px;
+    width: 100%;
+}
+
+nav > div.a-store{
+    display: flex;
+    align-items: center;
+    grid-area: a-store;
+}
+
+div.a-store > img#academlo-logo{
+    object-fit: contain;
+    width: 50px;
+}
+
+div.a-store > h1#top-store{
+    color: var(--title-color);
+    font-size: 18px;
+}
+
+nav > div.burger{
+    display: flex;
+    grid-area: burger;
+}
+
+input#burger-menu{
+    visibility: hidden;
+}
+
+i#burger-icon{
+    font-size: 25px;
+    align-self: center;
+    padding-top: 2px;
+    color: var(--button-color);
+}
+
+input#burger-menu ~ ul{
+    background-color: var(--body-color);
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 50;
+    height: calc( 100vh - 60px );
+    top: 60px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5vw;
+    padding: 2rem 1rem;
+}
+
+input#burger-menu:checked ~ ul{
+    display: flex;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+input#burger-menu ~ ul li#home{
+    font-weight: 600;
+    color: var(--first-color);
+}
+
+nav > div.icons{
+    grid-area: icons;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 15px;
+}
+
+div.icons > div.cont-icons > i{
+    font-size: 25px;
+    font-size: 25px;color: var(--button-color);
+}
+
+/* MAIN STATIC CONTENT */
+
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* Top section */
+
+section.top-img{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+section.top-img > div#red-rectangle{
+    background-color: var(--first-color);
+    width: 60vw;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+section.top-img > div#red-rectangle > img#main-item{
+    max-width: 90%;
+    object-fit: contain;
+}
+
+/* Main item text */
+
+section.main-text{
+    padding: 3rem 1.5rem 0 1.5rem;
+}
+
+section.main-text > h2{
+    color: var(--title-color);
+    font-size: 34px;
+    padding-bottom: 1rem;
+}
+
+section.main-text > h4{
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+
+section.main-text > h3{
+    color: var(--first-color);
+    font-size: 20px;
+    font-weight: 400;
+    font-stretch: expanded;
+    padding-bottom: 2rem;
+}
+
+section.main-text > div.main-buttons{
+    display: flex;
+    align-items: center;
+}
+
+div.main-buttons > div#main-discover{
+    display: flex;
+    background-color: var(--card-color);
+    height: 40px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+div.main-buttons > div#main-discover > h6{
+    color: var(--title-color);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+div.main-buttons > div#main-add{
+    display: flex;
+    background-color: var(--button-color);
+    height: 50px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+}
+
+div.main-buttons > div#main-add > h5{
+    color: var(--container-color);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+
+
+
+/* CSS Product boxes */
+
+div.product-slide{
+    padding-top: 200px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.product-slide > img {
+    object-fit: contain;
+    max-width: 250px;
+    background-color: var(--card-color);
+    border-radius: 15px 15px 0 0;
+}
+
+div.product-slide > a.anchor-img{
+    background-color: var(--container-color);
+    box-shadow: 0px 0px 10px var(--title-color);
+    border-radius: 50px;
+    display: flex;
+    position: relative;
+    top: 275px;
+    left: 180px;
+    max-width: 50px;
+    height: 50px;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+}
+
+a.anchor-img > i.product-img{
+    display: flex;
+    font-size: 25px;
+    z-index: 2;
+    color: var(--button-color);
+}
+
+div.product-slide > div.product-text{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 0 20px;
+}
+
+h2.product-price{
+    color: var(--title-color);
+}
+
+h5.product-stock{
+    color: var(--text-color);
+    padding-left: 5px;
+}
+
+div.product-slide > h4.product-category{
+    padding-left: 20px;
+    color: var(--title-color);
+}
