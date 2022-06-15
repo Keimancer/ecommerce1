@@ -44,6 +44,7 @@ body{
 /* Header stuff */
 
 nav{
+    background-color: transparent;
     position: fixed;
     display: grid;
     grid-template-columns: 150px 1fr 50px;
@@ -52,6 +53,10 @@ nav{
     padding: 0 1.25rem;
     height: 60px;
     width: 100%;
+}
+
+nav.scroll-change{
+    background-color: var(--body-color);
 }
 
 nav > div.a-store{
@@ -234,6 +239,8 @@ div.main-buttons > div#main-add > h5{
     font-weight: 600;
 }
 
+/* Store */
+
 section.store{
     padding: 5rem 0;
 }
@@ -264,6 +271,15 @@ div.category-title > h5{
     color: var(--title-color);
     font-size: 14px;
     font-weight: 400;
+}
+
+/* Content styles*/
+
+section.store > div.products-father{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Footer */
@@ -330,7 +346,7 @@ aside.shopping-cart{
     z-index: 30;
 }
 
-aside.shopping-cart.mostrar{
+aside.shopping-cart.show{
     display: block;
 }
 
@@ -384,6 +400,66 @@ div.empty-state > h5{
     text-align: left;
 }
 
+div.filled-state{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--title-color);
+    padding: 1rem 0;
+}
+
+div.filled-state > div.product-in-cart{
+    display: flex;
+}
+
+div.product-in-cart > img{
+    width: 70px;
+    object-fit: contain;
+}
+
+div.product-in-cart > div.product-cart-info{
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 1rem;
+}
+
+div.product-cart-info > h2{
+    font-size: 14px;
+}
+
+div.product-cart-info > div.stock-price{
+    display: flex;
+    justify-content: center;
+}
+
+div.stock-price > h3{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+div.stock-price > h4{
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--first-color);
+}
+
+div.product-cart-info > h5{
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--first-color);
+}
+
+div.product-cart-info > div.units-cart{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
 div.items-count-price{
     display: flex;
     width: 100%;
@@ -416,10 +492,10 @@ div#checkout-button > h4{
 /* CSS Product boxes */
 
 div.product-slide{
-    padding-top: 200px;
-    padding-left: 50px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 div.product-slide > img {
@@ -429,31 +505,33 @@ div.product-slide > img {
     border-radius: 15px 15px 0 0;
 }
 
-div.product-slide > a.anchor-img{
+div.product-slide > button.product-button{
     background-color: var(--container-color);
+    border: transparent;
     box-shadow: 0px 0px 10px var(--title-color);
     border-radius: 50px;
     display: flex;
-    position: relative;
-    top: 275px;
-    left: 180px;
-    max-width: 50px;
+    /*position: relative;*/
+    top: 0px;
+    left: 50px;
+    width: 50px;
     height: 50px;
-    z-index: 2;
+    /*z-index: 0;*/
     align-items: center;
     justify-content: center;
 }
 
-a.anchor-img > i.product-img{
+button.product-button > i.product-img{
     display: flex;
     font-size: 25px;
-    z-index: 2;
     color: var(--button-color);
 }
 
 div.product-slide > div.product-text{
     display: flex;
     align-items: center;
+    align-self: unset;
+    left: 0;
     padding: 10px 20px 0 20px;
 }
 
