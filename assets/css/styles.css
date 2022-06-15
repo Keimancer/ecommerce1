@@ -209,7 +209,7 @@ section.main-text > div.main-buttons{
     align-items: center;
 }
 
-div.main-buttons > div#main-discover{
+div.main-buttons div#main-discover{
     display: flex;
     background-color: var(--card-color);
     height: 40px;
@@ -218,13 +218,13 @@ div.main-buttons > div#main-discover{
     justify-content: center;
 }
 
-div.main-buttons > div#main-discover > h6{
+div.main-buttons div#main-discover > h6{
     color: var(--title-color);
     font-size: 14px;
     font-weight: 400;
 }
 
-div.main-buttons > div#main-add{
+div.main-buttons div#main-add{
     display: flex;
     background-color: var(--button-color);
     height: 50px;
@@ -233,7 +233,7 @@ div.main-buttons > div#main-add{
     justify-content: center;
 }
 
-div.main-buttons > div#main-add > h5{
+div.main-buttons div#main-add > h5{
     color: var(--container-color);
     font-size: 15px;
     font-weight: 600;

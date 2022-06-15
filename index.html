@@ -22,8 +22,8 @@
                     <i class='bx bx-grid-alt' id="burger-icon"></i>
                 </label>
                 <ul>
-                    <a href="#home"><li id="home">Home</li></a>
-                    <a href="#products"><li>Products</li></a>
+                    <a href="#home-scroll"><li id="home">Home</li></a>
+                    <a href="#products"><li id="products-scroll">Products</li></a>
                 </ul>
             </div>
             <div class="icons">
@@ -38,7 +38,7 @@
         </nav>
     </header>
     <main>
-        <section class="top-img">
+        <section class="top-img" id="home-scroll">
             <div id="red-rectangle">
                 <img src="./assets/images/featured2.png" alt="" id="main-item">
             </div>
@@ -55,29 +55,33 @@
                 $14.00
             </h3>
             <div class="main-buttons">
-                <div id="main-discover">
-                    <h6>Discover</h6>
-                </div>
-                <div id="main-add">
-                    <h5>ADD TO CART</h5>
-                </div>
+                <a href="#products">
+                    <div id="main-discover">
+                        <h6>Discover</h6>
+                    </div>
+                </a>
+                <a href="">
+                    <div id="main-add">
+                        <h5>ADD TO CART</h5>
+                    </div>
+                </a>
             </div>
         </section>
-        <section class="store">
+        <section class="store" id="products">
             <div class="category-title-father">
-                <div class="category-title">
+                <div class="category-title" id="category-all">
                     <h4>Show All</h4>
                     <h5>Show all products</h5>
                 </div>
-                <div class="category-title">
+                <div class="category-title" id="category-hoodies">
                     <h4>Hoodies</h4>
                     <h5>0 products</h5>
                 </div>
-                <div class="category-title">
+                <div class="category-title" id="category-shirts">
                     <h4>Shirts</h4>
                     <h5>0 products</h5>
                 </div>
-                <div class="category-title">
+                <div class="category-title" id="category-sweatshirts">
                     <h4>Sweatshirts</h4>
                     <h5>0 products</h5>
                 </div>
@@ -134,33 +138,35 @@
         <div class="product-list">
             <i class="bx bx-x bx-md cart-close" id="cart-close"></i>
             <h2>My Cart</h2>
-            <!--
-                <div class="filled-state">
-                    <div class="product-in-cart">
-                        <img src="./assets/images/featured1.png" alt="">
-                        <div class="product-cart-info">
-                            <h2>Name</h2>
-                            <div class="stock-price">
-                                <h3>Stock: 00 |</h3>
-                                <h4>$00.00</h4>
-                            </div>
-                            <h5>Subtotal: $00.00</h5>
-                            <div class="units-cart">
-                                <i class='bx bx-minus-circle'></i>
-                                <h6>X units</h6>
-                                <i class='bx bx-plus-circle'></i>
+            <div class="states">
+                <!--
+                    <div class="filled-state">
+                        <div class="product-in-cart">
+                            <img src="./assets/images/featured1.png" alt="">
+                            <div class="product-cart-info">
+                                <h2>Name</h2>
+                                <div class="stock-price">
+                                    <h3>Stock: 00 |</h3>
+                                    <h4>$00.00</h4>
+                                </div>
+                                <h5>Subtotal: $00.00</h5>
+                                <div class="units-cart">
+                                    <i class='bx bx-minus-circle'></i>
+                                    <h6>X units</h6>
+                                    <i class='bx bx-plus-circle'></i>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            -->
-            <!--
-                <div class="empty-state">
-                    <img src="./assets/images/empty-cart.png" alt="">
-                    <h2>Your cart is empty</h2>
-                    <h5>You can add items to your cart by clicking on the '+' button on the product page.</h5>
-                </div>
-            -->
+                -->
+                <!--
+                    <div class="empty-state">
+                        <img src="./assets/images/empty-cart.png" alt="">
+                        <h2>Your cart is empty</h2>
+                        <h5>You can add items to your cart by clicking on the '+' button on the product page.</h5>
+                    </div>
+                -->
+            </div>
             <div class="items-count-price">
                 <h3>0 Items</h3>
                 <h3>$0.00</h3>
