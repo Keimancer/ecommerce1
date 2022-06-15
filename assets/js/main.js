@@ -35,7 +35,9 @@ const items = [
     }
 ];
 
+let body = document.querySelector("body");
 let nav = document.querySelector("nav");
+let themeIcon = document.querySelector("#theme-toggler");
 let scrollHome = document.querySelector("#home");
 let scrollProds = document.querySelector("#products-scroll");
 let burgerMenu = document.querySelector("#burger-menu");
@@ -56,13 +58,17 @@ let cart = [];
 
 document.addEventListener("DOMContentLoaded", () =>{
     showMerch(items);
+    if (window.localStorage.getItem("cart")){
+        cart = JSON.parse(window.localStorage.getItem("cart"));
+    }else{
+        window.localStorage.setItem("cart", JSON.stringify([]));
+    }
+
+    if (window.localStorage.getItem("cartCount")){
+        iconCartNumber.textContent = JSON.parse(window.localStorage.getItem("cartCount"));
+    }
 });
 
-if (window.localStorage.getItem("cart")){
-    cart = JSON.parse(window.localStorage.getItem("cart"));
-}else{
-    window.localStorage.setItem("cart", JSON.stringify([]));
-}
 
 window.addEventListener( "scroll", () =>{
     if( window.scrollY > 60 ){
@@ -79,6 +85,17 @@ scrollHome.addEventListener( "click", () =>{
 scrollProds.addEventListener( "click", () =>{
     burgerMenu.checked = false;
 })
+
+themeIcon.addEventListener("click", ()=>{
+    body.classList.toggle("dark-theme");
+    
+    let isDark = body.classList.contains("dark-theme");
+    if(isDark){
+        themeIcon.classList.replace("bx-moon", "bx-sun");
+    }else{
+        themeIcon.classList.replace("bx-sun", "bx-moon");
+    };
+});
 
 cartIcon.addEventListener( "click", () =>{
     cartOpen.classList.add("show")
@@ -136,9 +153,7 @@ function showMerch(array) {
 
     productsContainer.innerHTML = fragmentHTML;
 
-
     let addButtonProd = document.querySelectorAll(".product-button");
-
 
     addButtonProd.forEach( (button) =>{
         button.addEventListener("click", () =>{
@@ -229,4 +244,6 @@ function addToCart(){
     `
     iconCartNumber.textContent = finalQuantity;
     totalPriceSelector.innerHTML = priceFragmentHTML;
+
+    window.localStorage.setItem("cartCount", JSON.stringify(finalQuantity));
 };
