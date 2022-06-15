@@ -58,6 +58,12 @@ document.addEventListener("DOMContentLoaded", () =>{
     showMerch(items);
 });
 
+if (window.localStorage.getItem("cart")){
+    cart = JSON.parse(window.localStorage.getItem("cart"));
+}else{
+    window.localStorage.setItem("cart", JSON.stringify([]));
+}
+
 window.addEventListener( "scroll", () =>{
     if( window.scrollY > 60 ){
         nav.classList.add("scroll-change")
@@ -147,7 +153,6 @@ function showMerch(array) {
 
 function cartFiller(){
     let fragmentHTML = "";
-    let emptySelector = document.querySelector("div.empty-state");
 
     if (cart.length == 0){
         fragmentHTML += `
@@ -179,6 +184,8 @@ function addProduct( product ){
 
         cart.push(product);
     }
+
+    window.localStorage.setItem ("cart", JSON.stringify(cart))
 
     addToCart();
 }
@@ -212,6 +219,7 @@ function addToCart(){
         `
         finalPrice += item.quantitySelected * item.price;
         finalQuantity += item.quantitySelected;
+        
     } )
     statesSelector.innerHTML = fragmentHTML;
 

@@ -475,14 +475,14 @@ div.items-count-price > h3{
     font-weight: 400;
 }
 
-div.product-list > div#checkout-button{
+div.product-list > a#checkout-button{
     background-color: var(--card-color);
     padding: 10px 25px;
     position: relative;
     left: 25vw;
 }
 
-div#checkout-button > h4{
+a#checkout-button > h4{
     color: var(--title-color);
     font-size: 14px;
     font-weight: 400;
