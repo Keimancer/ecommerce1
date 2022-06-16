@@ -56,6 +56,7 @@ let categorySweatshirts = document.querySelector("#category-sweatshirts");
 let categoryHoodiesNumber = document.querySelector("#category-hoodies>h5");
 let categoryShirtsNumber = document.querySelector("#category-shirts>h5");
 let categorySweatshirtsNumber = document.querySelector("#category-sweatshirts>h5");
+let checkoutButton = document.querySelector("#checkout-button");
 let categorySelected;
 let cart = [];
 
@@ -149,13 +150,17 @@ categorySweatshirts.addEventListener( "click", () =>{
     showMerch(returnFilter)
 })
 
+checkoutButton.addEventListener( "click", () =>{
+    alert("¡Compra hecha!");
+})
+
 function showMerch(array) {
     let fragmentHTML = ""
 
 
     array.forEach( (product) =>{
         fragmentHTML += `
-        <div class="product-slide">
+        <div class="product-slide" style="position:static">
             <img src=${product.image} alt="">
             <button data-id="${product.id}" class="product-button">
                 <i class='product-img bx bx-plus'></i>
