@@ -53,6 +53,9 @@ let categoryAll = document.querySelector("#category-all");
 let categoryHoodies = document.querySelector("#category-hoodies");
 let categoryShirts = document.querySelector("#category-shirts");
 let categorySweatshirts = document.querySelector("#category-sweatshirts");
+let categoryHoodiesNumber = document.querySelector("#category-hoodies>h5");
+let categoryShirtsNumber = document.querySelector("#category-shirts>h5");
+let categorySweatshirtsNumber = document.querySelector("#category-sweatshirts>h5");
 let categorySelected;
 let cart = [];
 
@@ -67,6 +70,21 @@ document.addEventListener("DOMContentLoaded", () =>{
     if (window.localStorage.getItem("cartCount")){
         iconCartNumber.textContent = JSON.parse(window.localStorage.getItem("cartCount"));
     }
+
+    let returnFilterHoodies = items.filter( (element)=>{
+        return ( element.category == "hoodies" )
+    })
+    categoryHoodiesNumber.textContent = returnFilterHoodies.length + " products";
+
+    let returnFilterShirts = items.filter( (element)=>{
+        return ( element.category == "shirts" )
+    })
+    categoryShirtsNumber.textContent = returnFilterShirts.length + " products";
+
+    let returnFilterSweatshirts = items.filter( (element)=>{
+        return ( element.category == "sweatshirts" )
+    })
+    categorySweatshirtsNumber.textContent = returnFilterSweatshirts.length + " products";
 });
 
 
